@@ -1,7 +1,7 @@
 # nodejs-http-server-app
 nodejs-http-server-app
 
-Simple nodejs http server to parse the request headers/body etc... 
+Nodejs http server to parse the request headers/body etc... 
 
 ## Build Docker image:
 ```javascript
