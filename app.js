@@ -19,7 +19,7 @@ http.createServer((request, response) => {
 
     //console.log(headers.authorization);
     if (!headers.authorization) {
-      response.setHeader('WWW-Authenticate', 'Basic realm="foo"');
+      response.setHeader('WWW-Authenticate', 'Basic realm="MyServerName"');
       response.statusCode = 401;
     }
 
