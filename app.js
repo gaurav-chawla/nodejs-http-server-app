@@ -18,17 +18,21 @@ http.createServer((request, response) => {
     response.setHeader('Content-Type', 'application/json');
 
     //console.log(headers.authorization);
-
     if (!headers.authorization) {
       response.setHeader('WWW-Authenticate', 'Basic realm="foo"');
       response.statusCode = 401;
     }
 
-    console.log("headers::", headers, "body::", body, "method::", method);
+    //console.log("headers::", headers, "body::", body, "method::", method);
+    //console.log(response);
+    //const responseBody = { body };
 
-    const responseBody = { headers, body, method };
+    b = JSON.parse(body);
+    m = JSON.parse(b.Message);
 
-    //response.write(JSON.stringify(responseBody));
+    console.log(JSON.stringify(m, null, '\t'));
+
+    response.write(JSON.stringify(m, null, '\t'));
     response.end();
 
   });
